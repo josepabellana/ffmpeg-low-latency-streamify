@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "module": "commonjs",
+      "declaration": true,
+      "outDir": "dist",
+      "strict": false,
+      "noImplicitAny": false,
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+    },
+    "include": [
+      "src"
+    ]
+  }

@@ -1,0 +1,22 @@
+{
+  "name": "ffmpeg-low-latency-streamify",
+  "version": "1.0.0",
+  "description": "streamifies a url or a local video into streams",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc",
+    "streamify": "npm run build && node dist/streamify"
+  },
+  "author": "josep abellana puyol",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mkdirp": "^2.0.0",
+    "@types/node": "^20.12.11",
+    "@types/rimraf": "^4.0.5",
+    "command-line-args": "^5.2.1",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5"
+  }
+}
