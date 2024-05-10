@@ -10,8 +10,8 @@ const mediaFolder = path.join(__dirname, '../../media');
 export default class Filesystem implements Storage {
     private readonly _stat = util.promisify(fs.stat);
     private readonly _exists = util.promisify(fs.exists);
-    private readonly _mkdirp = util.promisify(mkdirp.manualSync);
-    private readonly _rimraf = util.promisify(rimraf.rimrafSync);
+    private readonly _mkdirp = mkdirp;
+    private readonly _rimraf = rimraf;
     private readonly _readFile = util.promisify(fs.readFile);
     private readonly _writeFile = util.promisify(fs.writeFile);
 
@@ -37,12 +37,12 @@ export default class Filesystem implements Storage {
         return this._exists(path);
     }
 
-    public mkdirp(path: string): Promise<unknown> {
-        return this._mkdirp(path, {}) as Promise<any>;
+    public mkdirp(path: string): Promise<any> {
+        return this._mkdirp(path);
     }
 
-    public rimraf(path: string): Promise<unknown> {
-        return this._rimraf(path, {});
+    public rimraf(path: string): Promise<any> {
+        return this._rimraf(path);
     }
 
     public readFile(path: string): Promise<Buffer>;

@@ -9,10 +9,8 @@ async function initStreamBaseFolder(name: string) {
     // Modify stream name to be used as name of the folder
     const streamName = normalizeStreamName(name);
     const baseFolder = path.join(storage.mediaFolder, streamName);
-    console.log('here 1');
     await storage.rimraf(baseFolder);
     await storage.mkdirp(baseFolder);
-    console.log('here 2');
 }
 
 export default {

@@ -39,7 +39,7 @@ async function removeAudio(name: string, input: string) {
 
     // Create the target folder
     console.info('Create target media folder -' + targetFolder);
-    await mkdir(targetFolder, {});
+    await mkdirp(targetFolder);
 
     console.info('Run ffmpeg to remove the audio track');
     execSync(`ffmpeg -i ${input} -vcodec copy -an -y -v quiet ${filePath}`);
@@ -62,7 +62,7 @@ async function createHLSStream(name: string, filePath: string, profile: types.Me
         const manifestFile = path.join(targetFolder, 'manifest.m3u8');
         const playlistFile = path.join(streamFolder, 'playlist.m3u8');
 
-        await mkdir(streamFolder, {});
+        await mkdirp(streamFolder);
 
         const codecArgs = '-vcodec libx264 -acodec copy';
         const resolutionArgs = `-s ${width}x${height}`;

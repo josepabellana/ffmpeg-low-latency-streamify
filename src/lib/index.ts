@@ -5,8 +5,8 @@ export interface Storage {
     readonly mediaFolder: string;
     stat(path: string): Promise<fs.Stats>;
     exists(path: string): Promise<boolean>;
-    mkdirp(path: string): Promise<unknown>;
-    rimraf(path: string): Promise<unknown>;
+    mkdirp(path: string): Promise<any>;
+    rimraf(path: string): Promise<any>;
     readFile(path: string): Promise<Buffer>;
     readFile(path: string, encoding: string): Promise<string>;
     writeFile(path: string, data: any, encoding?: string): Promise<void>;
